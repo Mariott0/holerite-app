@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "expo-router": "^5.0.7",
+    "react-native-safe-area-context": "^5.4.0",
+    "react-native-screens": "^4.10.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.5"
+  }
+}
