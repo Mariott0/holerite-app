@@ -1,6 +1,7 @@
+
 # 📄 Sistema de Holerite - RH e Colaboradores
 
-Este é um aplicativo mobile desenvolvido para disponibilizar holerites de forma digital. O sistema permite que o **RH cadastre os colaboradores e seus respectivos holerites**, enquanto os **colaboradores podem acessar e visualizar seus próprios holerites de forma segura e prática.  
+Este é um aplicativo mobile desenvolvido para disponibilizar holerites de forma digital. O sistema permite que o **RH cadastre os colaboradores e seus respectivos holerites**, enquanto os **colaboradores podem acessar e visualizar seus próprios holerites de forma segura e prática**.
 
 ---
 
@@ -20,7 +21,7 @@ Este é um aplicativo mobile desenvolvido para disponibilizar holerites de forma
 ## 🗂️ Navegação
 
 ### 🔑 Login
-- Acesso separado para **RH** e **colaboradores**
+- Acesso separado para **RH** e **Colaboradores**
 
 ### Menus do RH
 - 👥 **Colaboradores**
@@ -48,17 +49,13 @@ Este é um aplicativo mobile desenvolvido para disponibilizar holerites de forma
 - 🗄️ Prisma ORM — Mapeamento objeto-relacional (ORM) para banco de dados PostgreSQL
 
 ### **Banco de Dados**
-- 🐘 **PostgreSQL** — Banco de dados relacional
-
-### **Outros**
-- 🔒 JWT (JSON Web Tokens) — Autenticação e autorização
-- 🐳 Docker (opcional) — Containerização da aplicação
+- 🐘 PostgreSQL — Banco de dados relacional
 
 ---
 
 ## 🌐 Arquitetura do Sistema
 
-```plaintext
+```
 Frontend (React Native + Expo Router)
 │
 ├── Login
@@ -73,13 +70,16 @@ Backend (NestJS + Prisma + PostgreSQL)
 ├── Usuários (RH e Colaboradores)
 ├── Holerites
 └── Banco de Dados (PostgreSQL)
+```
 
-## 👨‍💻 Desenvolvido por
+---
+
+## 👨‍💻 Desenvolvedores
 
 - **Nathan Mariotto**
-- [GitHub](https://github.com/nathanmariott0)
-- [Email](mailto:nathanmariotto.dev@gmail.com)
+  - [GitHub](https://github.com/nathanmariott0)
+  - [Email](mailto:nathanmariotto.dev@gmail.com)
 
-- **Leonardo dias Frachine**
-- [GitHub](https://github.com/Leonardo-frachine)
-- [Email](mailto:leonardo.frachine@outlook.com)
+- **Leonardo Dias Frachine**
+  - [GitHub](https://github.com/Leonardo-frachine)
+  - [Email](mailto:leonardo.frachine@outlook.com)
