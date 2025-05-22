@@ -91,4 +91,3 @@ Backend (NestJS + Prisma + PostgreSQL)
   - [GitHub](https://github.com/Leonardo-frachine)
   - [Email](mailto:leonardo.frachine@outlook.com)
 
-Teste branch
