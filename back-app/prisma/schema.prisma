@@ -1,15 +1,51 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id            String        @id @default(uuid())
+  nome          String
+  email         String        @unique
+  senha         String
+  papel         Papel
+  holerites     Holerite[]    // Relacionamento: um usuário tem vários holerites
+  pontos        CartaoPonto[] // Relacionamento: um usuário tem vários registros de ponto
+  criadoEm      DateTime      @default(now())
+  atualizadoEm  DateTime      @updatedAt
+}
+
+model Holerite {
+  id            String     @id @default(uuid())
+  urlArquivo    String     // URL do arquivo (PDF, imagem ou documento)
+  mes           Int        // Mês do holerite
+  ano           Int        // Ano do holerite
+  usuarioId     String
+  usuario       Usuario    @relation(fields: [usuarioId], references: [id])
+  criadoEm      DateTime   @default(now())
+  atualizadoEm  DateTime   @updatedAt
+}
+
+model CartaoPonto {
+  id            String     @id @default(uuid())
+  data          DateTime   // Data do registro
+  entrada       DateTime?  // Horário de entrada
+  pausa         DateTime?  // Pausa para almoço (opcional)
+  retornoPausa  DateTime?  // Retorno da pausa (opcional)
+  saida         DateTime?  // Horário de saída
+  usuarioId     String
+  usuario       Usuario    @relation(fields: [usuarioId], references: [id])
+  criadoEm      DateTime   @default(now())
+  atualizadoEm  DateTime   @updatedAt
+
+  @@unique([usuarioId, data]) // Garante que só exista 1 cartão ponto por dia por usuário
+}
+
+enum Papel {
+  RH
+  COLABORADOR
 }
